@@ -1,0 +1,11 @@
+<div class="cover-photo"></div>
+<img class="avatar" src="/images/avatar.jpg" />
+{{#link-to "user" user.username}}
+  {{user.username}}
+{{/link-to}}
+<ul class="profile-stats">
+  <li>
+    <h4>Number of Favours</h4>
+    <p>{{user.numberOfTasks}}</p>
+  </li>
+</ul>

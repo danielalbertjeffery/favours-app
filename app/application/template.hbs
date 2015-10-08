@@ -1,0 +1,28 @@
+<header>
+  <div class="page-container">
+
+    <div class="logo">Favours</div>
+
+    {{#if session.isAuthenticated}}
+      <nav>
+        {{#link-to "home"}}Home{{/link-to}}
+
+        {{#link-to "user" session.currentUser.username}}
+          <img class="avatar" src="/images/avatar.jpg" />
+          {{session.currentUser.username}} <!-- New! -->
+        {{/link-to}}
+
+        <button class="favour" {{action "toggleComposeModal"}}>New Favour</button>
+      </nav>
+    {{/if}}
+
+  </div>
+</header>
+
+{{outlet}}
+
+{{#if showingComposeModal}}
+  {{#modal-dialog translucentOverlay=true close=(action 'toggleComposeModal')}}
+    {{compose-modal dismiss=(action 'toggleComposeModal')}}
+  {{/modal-dialog}}
+{{/if}}

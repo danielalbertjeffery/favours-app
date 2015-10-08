@@ -1,0 +1,12 @@
+<img class="avatar" src="/images/avatar.jpg" />
+<div class="info" {{action 'delete'}}>
+  {{#link-to 'user' task.user.username}}
+    {{task.user.username}}
+  {{/link-to}}
+  <time>{{moment-from-now tasks.taskCreatedAt}}</time>
+  <p><span class="task-info">Title:</span> {{task.title}}</p>
+  <p><span class="task-info">Description:</span> {{task.description}}</p>
+  <p><span class="task-info">Location:</span> {{task.location}}</p>
+  <p><span class="task-info">Single/Multiple:</span> {{task.recurrence}}</p>
+  <p><span class="task-info">Points:</span> {{task.points}}</p>
+</div>

@@ -1,0 +1,8 @@
+{{#each tasks as |task|}}
+  {{tasks-list/task-single task=task}}
+{{else}}
+  <div class="no-chirps">
+    <div class="icon"></div>
+    <p>There are no tasks to display.</p>
+  </div>
+{{/each}}

@@ -1,0 +1,29 @@
+<div class="profile-cover cover-photo"></div>
+
+<div class="stats-container">
+  <div class="page-container">
+    <img class="avatar" src="/images/avatar.jpg" />
+
+    <ul class="profile-stats">
+      {{#link-to "user.index" tagName="li"}}
+        <h4>Number of Favours</h4>
+        <p>{{model.user.numberOfTasks}}</p>
+      {{/link-to}}
+
+    </ul>
+  </div>
+</div>
+
+<div class="page-container user-page">
+
+  <aside>
+    <h1>{{model.user.username}}</h1>
+    <p class="description">{{model.user.aboutMe}}</p>
+    <p class="joined">Joined {{moment-from-now model.user.joinedAt}}</p>
+  </aside>
+  
+  <main>
+    {{outlet}}
+  </main>
+
+</div>
